@@ -20,7 +20,7 @@
             "defaultValue": "",
             "type": "string",
             "metadata": {
-                "description": "User name for the private image registry server For Azure Container Registry the CLI command 'az acr credential show --name <myacr> --query \"username\"' will show the username."
+                "description": "User name for the private image registry server. For Azure Container Registry the CLI command 'az acr credential show --name <myacr> --query \"username\"' will show the username."
             }
         }
     },
@@ -56,12 +56,21 @@
                 },
                 "tcp": [
                     {
-                        "name": "web",
+                        "name": "mulligan",
                         "port": 44540,
                         "destination": {
                             "applicationName": "jaimetaRdl",
                             "serviceName": "helloWorldService",
                             "endpointName": "helloWorldListener"
+                        }
+                    },
+                    {
+                        "name": "rdl",
+                        "port": 55450,
+                        "destination": {
+                            "applicationName": "jaimetaRdl",
+                            "serviceName": "helloWorldService",
+                            "endpointName": "rdlListener"
                         }
                     }
                 ]
@@ -92,12 +101,16 @@
                                         {
                                             "name": "helloWorldListener",
                                             "port": "44540"
+                                        },
+                                        {
+                                            "name": "rdlListener",
+                                            "port": "55450"
                                         }
                                     ],
                                     "environmentVariables": [
                                         {
                                             "name": "MWC_RDLENGINE_PUBLICFQDN",
-                                            "value": "jaimetardl.azurefd.net"
+                                            "value": "40.117.132.99"
                                         }
                                     ],
                                     "resources": {
