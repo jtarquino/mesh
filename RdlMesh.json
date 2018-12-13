@@ -25,7 +25,7 @@
         },
         {
             "apiVersion": "2018-09-01-preview",
-            "name": "helloWorldGatewayWindows",
+            "name": "jaimetaRdlGateway",
             "type": "Microsoft.ServiceFabricMesh/gateways",
             "location": "[parameters('location')]",
             "tags": {},
@@ -113,7 +113,7 @@
     ],
     "outputs": {
         "publicIPAddress": {
-            "value": "[reference('helloWorldGatewayWindows').ipAddress]",
+            "value": "[reference('jaimetaRdlGateway').ipAddress]",
             "type": "string"
         }
     }
