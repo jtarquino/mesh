@@ -133,6 +133,9 @@
                                     "endpointRefs": [
                                         {
                                             "name": "helloWorldListener"
+                                        },
+                                        {
+                                            "name": "rdlListener"
                                         }
                                     ]
                                 }
