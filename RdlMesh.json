@@ -13,7 +13,7 @@
     "resources": [
         {
             "apiVersion": "2018-09-01-preview",
-            "name": "helloWorldNetworkWindows",
+            "name": "jaimetaRdlNetwork",
             "type": "Microsoft.ServiceFabricMesh/networks",
             "location": "[parameters('location')]",
             "dependsOn": [],
@@ -30,7 +30,7 @@
             "location": "[parameters('location')]",
             "tags": {},
             "dependsOn": [
-                "Microsoft.ServiceFabricMesh/networks/helloWorldNetworkWindows"
+                "Microsoft.ServiceFabricMesh/networks/jaimetaRdlNetwork"
             ],
             "properties": {
                 "description": "Service Fabric Mesh Gateway for HelloWorld Windows sample.",
@@ -38,7 +38,7 @@
                     "name": "Open"
                 },
                 "destinationNetwork": {
-                    "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'helloWorldNetworkWindows')]"
+                    "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'jaimetaRdlNetwork')]"
                 },
                 "tcp": [
                     {
@@ -59,7 +59,7 @@
             "type": "Microsoft.ServiceFabricMesh/applications",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "Microsoft.ServiceFabricMesh/networks/helloWorldNetworkWindows"
+                "Microsoft.ServiceFabricMesh/networks/jaimetaRdlNetwork"
             ],
             "properties": {
                 "description": "Service Fabric Mesh HelloWorld Windows Application.",
@@ -97,7 +97,7 @@
                             "replicaCount": "1",
                             "networkRefs": [
                                 {
-                                    "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'helloWorldNetworkWindows')]",
+                                    "name": "[resourceId('Microsoft.ServiceFabricMesh/networks', 'jaimetaRdlNetwork')]",
                                     "endpointRefs": [
                                         {
                                             "name": "helloWorldListener"
