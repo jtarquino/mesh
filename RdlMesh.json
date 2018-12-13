@@ -8,6 +8,20 @@
             "metadata": {
                 "description": "Location of the resources (e.g. westus, eastus, westeurope)."
             }
+        },
+        "registryPassword": {
+            "defaultValue": "",
+            "type": "SecureString",
+            "metadata": {
+                "description": "Password for the private image registry server. For Azure Container Registry the CLI command 'az acr credential show --name <myacr> --query \"passwords[0].value\"' will show the password."
+            }
+        },
+        "registryUserName": {
+            "defaultValue": "",
+            "type": "string",
+            "metadata": {
+                "description": "User name for the private image registry server. For Azure Container Registry the CLI command 'az acr credential show --name <myacr> --query \"username\"' will show the username."
+            }
         }
     },
     "resources": [
@@ -91,6 +105,11 @@
                                             "cpu": "1",
                                             "memoryInGB": "1"
                                         }
+                                    },
+                                    "imageRegistryCredential": {
+                                        "server": "jaimetaregistry.azurecr.io",
+                                        "username": "[parameters('registryUserName')]",
+                                        "password": "[parameters('registryPassword')]"
                                     }
                                 }
                             ],
