@@ -87,7 +87,7 @@
                             "codePackages": [
                                 {
                                     "name": "helloWorldCode",
-                                    "image": "jaimetaregistry.azurecr.io/rdl/zerorunner",
+                                    "image": "jaimetaregistry.azurecr.io/rdl/zerorunner:latest",
                                     "endpoints": [
                                         {
                                             "name": "helloWorldListener",
